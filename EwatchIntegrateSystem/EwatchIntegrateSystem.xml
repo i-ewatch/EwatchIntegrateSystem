@@ -1,0 +1,1434 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EwatchIntegrateSystem</name>
+    </assembly>
+    <members>
+        <member name="T:EwatchIntegrateSystem.Controllers.InformationDataController">
+            <summary>
+            數值資訊
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.SignalR.IHubContext{EwatchIntegrateSystem.Hubs.InformationDataHub})">
+            <summary>
+            數值資訊初始化
+            </summary>
+            <param name="configuration"></param>
+            <param name="hubContext"></param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.ResponseMessage(EwatchIntegrateSystem.Filters.ResultJson,EwatchIntegrateSystem.Enums.ResponseTypeEnum,System.String,System.Object)">
+            <summary>
+            回應訊息處理
+            </summary>
+            <param name="result">回應物件</param>
+            <param name="Flag">訊息類別</param>
+            <param name="Message">訊息字串</param>
+            <param name="setting">取得物件</param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetAllElectricWeb">
+            <summary>
+            取得全部電表即時資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetAllElectricWeb(System.String,System.String)">
+            <summary>
+            取得特定卡版號全部電表即時資訊
+            </summary>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetElectricSagWeb(System.String,System.String,System.String)">
+            <summary>
+            取得最新驟降電壓資訊
+            </summary>
+            <param name="StartTime">當月時間 (yyyyMM)</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetElectricSwellWeb(System.String,System.String,System.String)">
+            <summary>
+            取得最新驟升電壓資訊
+            </summary>
+            <param name="StartTime">當月時間 (yyyyMM)</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetElectricAlarmWeb(System.String,System.String,System.String)">
+            <summary>
+            取得最新電表告警資訊
+            </summary>
+            <param name="StartTime">當月時間 (yyyyMM)</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetElectricLog(System.String,System.String,System.String)">
+            <summary>
+            當月電表歷史資訊
+            </summary>
+            <param name="StartTime">當月時間 (yyyyMM)</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetElectricSagLog(System.String,System.String,System.String)">
+            <summary>
+            當月驟降電壓歷史資訊
+            </summary>
+            <param name="StartTime">當月時間 (yyyyMM)</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetElectricSwellLog(System.String,System.String,System.String)">
+            <summary>
+            當月驟升電壓歷史資訊
+            </summary>
+            <param name="StartTime">當月時間 (yyyyMM)</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetElectricAlarmLog(System.String,System.String,System.String)">
+            <summary>
+            當月電表告警歷史資訊
+            </summary>
+            <param name="StartTime">當月時間 (yyyyMM)</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetELectricTotal(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            查詢電表累積量資料(特定卡版號單顆電表)
+            </summary>
+            <param name="StartTime">開始時間(yyyyMMdd)</param>
+            <param name="EndTime">結束時間(yyyyMMdd)</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <param name="DeviceNumber">設備編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.InsertElectricInformationLog(EwatchIntegrateSystem.Modules.ElectricInformation_Log,System.String,System.String)">
+            <summary>
+            新增電表資訊、更新電表即時資訊、刷新累積電量資訊
+            </summary>
+            <param name="electricInformation_Log">電表資訊</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.InserElectricSagLog(EwatchIntegrateSystem.Modules.ElectricSag_Log,System.String,System.String)">
+            <summary>
+            新增電表驟降電壓資訊
+            </summary>
+            <param name="electricSag_Log">電表驟降電壓資訊</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.InserElectricSwellLog(EwatchIntegrateSystem.Modules.ElectricSwell_Log,System.String,System.String)">
+            <summary>
+            新增電表驟升電壓資訊
+            </summary>
+            <param name="electricSwell_Log">電表驟升電壓資訊</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.InserElectricAlarmLog(EwatchIntegrateSystem.Modules.ElectricAlarm_Log,System.String,System.String)">
+            <summary>
+            新增電表告警資訊
+            </summary>
+            <param name="electricAlarm_Log">電表告警資訊</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Controllers.SystemController">
+            <summary>
+            基本資訊
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Controllers.SystemController.CaseMethod">
+            <summary>
+            案件資料庫方法
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Controllers.SystemController.DeviceMethod">
+            <summary>
+            設備資料庫方法
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Controllers.SystemController.DeviceTypeEnumMethod">
+            <summary>
+            設備類型資料庫方法
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.SignalR.IHubContext{EwatchIntegrateSystem.Hubs.SystemHub})">
+            <summary>
+            基本資訊初始化
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.ResponseMessage(EwatchIntegrateSystem.Filters.ResultJson,EwatchIntegrateSystem.Enums.ResponseTypeEnum,System.String,System.Object)">
+            <summary>
+            回應訊息處理
+            </summary>
+            <param name="result">回應物件</param>
+            <param name="Flag">訊息類別</param>
+            <param name="Message">訊息字串</param>
+            <param name="setting">取得物件</param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.GetAllCasse">
+            <summary>
+            取得所有案件資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.InserterCase(EwatchIntegrateSystem.Modules.CaseSetting)">
+            <summary>
+            新增案件資訊
+            </summary>
+            <param name="CaseSetting">案件資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.UpdateCase(EwatchIntegrateSystem.Modules.CaseSetting)">
+            <summary>
+            修改案件資訊
+            </summary>
+            <param name="CaseSetting">案件資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.DeleteCase(EwatchIntegrateSystem.Modules.CaseSetting)">
+            <summary>
+            刪除案件資訊
+            </summary>
+            <param name="CaseSetting">案件資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.GetAllDevice">
+            <summary>
+            取得所有設備資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.GetAllDevice(System.String,System.String)">
+            <summary>
+            取得特定卡版號設備資訊
+            </summary>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.InsertDevice(EwatchIntegrateSystem.Modules.DeviceSetting)">
+            <summary>
+            新增單個設備資訊
+            </summary>
+            <param name="deviceSetting">設備資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.InsertDevice(System.Collections.Generic.List{EwatchIntegrateSystem.Modules.DeviceSetting})">
+            <summary>
+            新增多個設備資訊
+            </summary>
+            <param name="deviceSetting">設備資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.UpdateDevice(EwatchIntegrateSystem.Modules.DeviceSetting)">
+            <summary>
+            修改單個設備資訊
+            </summary>
+            <param name="deviceSetting">設備資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.UpdateDevice(System.Collections.Generic.List{EwatchIntegrateSystem.Modules.DeviceSetting})">
+            <summary>
+            修改多個設備資訊
+            </summary>
+            <param name="deviceSetting">設備資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.DeleteDevice(EwatchIntegrateSystem.Modules.DeviceSetting)">
+            <summary>
+            刪除單個設備資訊
+            </summary>
+            <param name="deviceSetting">設備資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.DeleteDevice(System.Collections.Generic.List{EwatchIntegrateSystem.Modules.DeviceSetting})">
+            <summary>
+            刪除多個設備資訊
+            </summary>
+            <param name="deviceSetting">設備資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.GetAllDeviceType">
+            <summary>
+            取得所有設備類型資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.InsertDevice(EwatchIntegrateSystem.Modules.DeviceTypeEnumSetting)">
+            <summary>
+            新增設備類型資訊
+            </summary>
+            <param name="deviceTypeEnumSetting">設備類型資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.UpdateDevice(EwatchIntegrateSystem.Modules.DeviceTypeEnumSetting)">
+            <summary>
+            修改設備類型資訊
+            </summary>
+            <param name="deviceTypeEnumSetting">設備類型資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.SystemController.DeleteDevice(EwatchIntegrateSystem.Modules.DeviceTypeEnumSetting)">
+            <summary>
+            刪除設備類型資訊
+            </summary>
+            <param name="deviceTypeEnumSetting">設備類型資訊</param>
+            <returns></returns>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Enums.ResponseTypeEnum">
+            <summary>
+            回應類型
+            </summary>
+        </member>
+        <member name="F:EwatchIntegrateSystem.Enums.ResponseTypeEnum.Repeat">
+            <summary>
+            重複
+            </summary>
+        </member>
+        <member name="F:EwatchIntegrateSystem.Enums.ResponseTypeEnum.Finish">
+            <summary>
+            完成
+            </summary>
+        </member>
+        <member name="F:EwatchIntegrateSystem.Enums.ResponseTypeEnum.Error">
+            <summary>
+            錯誤
+            </summary>
+        </member>
+        <member name="F:EwatchIntegrateSystem.Enums.ResponseTypeEnum.NoneCardBord">
+            <summary>
+            沒有卡版號
+            </summary>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Filters.ResultJson">
+            <summary>
+            統一回應格式
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Filters.ResultJson.Data">
+            <summary>
+            數值資訊
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Filters.ResultJson.HttpCode">
+            <summary>
+            Code碼
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Filters.ResultJson.Error">
+            <summary>
+            錯誤訊息
+            </summary>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Filters.TokenFilter">
+            <summary>
+            Token篩選功能
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Filters.TokenFilter.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <summary>
+            啟用內容
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Hubs.InformationDataHub">
+            <summary>
+            Signalr 設備資訊Hub
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Hubs.InformationDataHub.Electric_WhoIs(System.String,System.String)">
+            <summary>
+            呼叫特定卡版號全部電表即時資訊(目前不使用)
+            </summary>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Hubs.InformationDataHub.ElectricInformationData(System.String,System.String,System.Collections.Generic.List{EwatchIntegrateSystem.Modules.ElectricInformation_Log})">
+            <summary>
+            現場特定卡版號全部電表即時資訊
+            </summary>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <param name="electricInformation_Logs">電表資訊</param>
+            <returns></returns>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Hubs.SystemHub">
+            <summary>
+            Signalr 系統資訊Hub
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Hubs.SystemHub.WhoIs(System.String,System.String)">
+            <summary>
+            呼叫指定卡版號資訊
+            </summary>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Hubs.SystemHub.Iam(System.String,System.String)">
+            <summary>
+            回應指定卡版號資訊
+            </summary>
+            <param name="CardNumber"></param>
+            <param name="BordNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Methods.CaseMethod">
+            <summary>
+            案件資料庫方法
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Methods.CaseMethod.ErrorResponse">
+            <summary>
+            錯誤資訊
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.CaseMethod.#ctor(System.String)">
+            <summary>
+            案件資料庫方法初始化
+            </summary>
+            <param name="sqlDB"></param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.CaseMethod.Case_Search">
+            <summary>
+            查詢全部案場卡版號
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.CaseMethod.Case_Add(EwatchIntegrateSystem.Modules.CaseSetting)">
+            <summary>
+            新增案場卡版號
+            </summary>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.CaseMethod.Case_Update(EwatchIntegrateSystem.Modules.CaseSetting)">
+            <summary>
+            修改案場名稱
+            </summary>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.CaseMethod.Case_Delete(EwatchIntegrateSystem.Modules.CaseSetting)">
+            <summary>
+            刪除案場
+            </summary>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Methods.DeviceMethod">
+            <summary>
+            設備資料庫方法
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Methods.DeviceMethod.ErrorResponse">
+            <summary>
+            錯誤資訊
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DeviceMethod.#ctor(System.String)">
+            <summary>
+            設備資料庫方法初始化
+            </summary>
+            <param name="sqlDB"></param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DeviceMethod.Device_Search">
+            <summary>
+            查詢全部設備
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DeviceMethod.Device_Search(System.String,System.String)">
+            <summary>
+            查詢特定卡版號設備
+            </summary>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DeviceMethod.Device_Single_Add(EwatchIntegrateSystem.Modules.DeviceSetting)">
+            <summary>
+            新增特定卡版號設備(單)
+            </summary>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DeviceMethod.Device_Multiple_Add(System.Collections.Generic.List{EwatchIntegrateSystem.Modules.DeviceSetting})">
+            <summary>
+            新增特定卡版號設備(多)
+            </summary>
+            <param name="settings"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DeviceMethod.Device_Single_Update(EwatchIntegrateSystem.Modules.DeviceSetting)">
+            <summary>
+            修改特定卡版號設備(單)
+            </summary>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DeviceMethod.Device_Multiple_Update(System.Collections.Generic.List{EwatchIntegrateSystem.Modules.DeviceSetting})">
+            <summary>
+            修改特定卡版號設備(多)
+            </summary>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DeviceMethod.Device_Single_Delete(EwatchIntegrateSystem.Modules.DeviceSetting)">
+            <summary>
+            刪除特定卡版號設備(單)
+            </summary>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DeviceMethod.Device_Multiple_Delete(System.Collections.Generic.List{EwatchIntegrateSystem.Modules.DeviceSetting})">
+            <summary>
+            刪除特定卡版號設備(多)
+            </summary>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Methods.DeviceTypeEnumMethod">
+            <summary>
+            設備類型資料庫方法
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Methods.DeviceTypeEnumMethod.ErrorResponse">
+            <summary>
+            錯誤資訊
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DeviceTypeEnumMethod.#ctor(System.String)">
+            <summary>
+            設備類型資料庫方法初始化
+            </summary>
+            <param name="sqlDB"></param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DeviceTypeEnumMethod.DeviceType_Search">
+            <summary>
+            查詢全部設備類型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DeviceTypeEnumMethod.DeviceType_Add(EwatchIntegrateSystem.Modules.DeviceTypeEnumSetting)">
+            <summary>
+            新增設備類型
+            </summary>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DeviceTypeEnumMethod.DeviceType_Update(EwatchIntegrateSystem.Modules.DeviceTypeEnumSetting)">
+            <summary>
+            修改設備類型
+            </summary>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DeviceTypeEnumMethod.DeviceType_Delete(EwatchIntegrateSystem.Modules.DeviceTypeEnumSetting)">
+            <summary>
+            刪除設備類型
+            </summary>
+            <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Methods.ElectricLogMethod">
+            <summary>
+            電表資訊資料庫方法
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Methods.ElectricLogMethod.ErrorResponse">
+            <summary>
+            錯誤資訊
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.#ctor(System.String)">
+            <summary>
+            電表資訊資料庫方法初始化
+            </summary>
+            <param name="sqlDB"></param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Create_DataBase(System.DateTime)">
+            <summary>
+            建立資料庫
+            </summary>
+            <param name="dateTime"></param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Create_ElectricTable(System.DateTime,System.String,System.String)">
+            <summary>
+            建立電表資料表
+            </summary>
+            <param name="dateTime"></param>
+            <param name="CardNumber"></param>
+            <param name="BordNumber"></param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Create_ElectricSagTable(System.DateTime,System.String,System.String)">
+            <summary>
+            建立電表驟降事件表
+            </summary>
+            <param name="dateTime"></param>
+            <param name="CardNumber"></param>
+            <param name="BordNumber"></param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Create_ElectricSwellTable(System.DateTime,System.String,System.String)">
+            <summary>
+            建立電表驟升事件表
+            </summary>
+            <param name="dateTime"></param>
+            <param name="CardNumber"></param>
+            <param name="BordNumber"></param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Create_ElectricAlarmTable(System.DateTime,System.String,System.String)">
+            <summary>
+            建立電表告警事件表
+            </summary>
+            <param name="dateTime"></param>
+            <param name="CardNumber"></param>
+            <param name="BordNumber"></param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.CardBord_Search(System.String,System.String)">
+            <summary>
+            卡版號是否存在
+            </summary>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricInformation_SearchMonth(System.String,System.String,System.String)">
+            <summary>
+            查詢電表歷史資料資訊(當月)
+            </summary>
+            <param name="StartTime">開始時間</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricTotal_Search(System.String,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            查詢電表累積量資料
+            </summary>
+            <param name="StartTime">開始時間</param>
+            <param name="EndTime">結束時間</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <param name="DeviceNumber">設備編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricSag_SearchMonth(System.String,System.String,System.String)">
+            <summary>
+            查詢電表驟降歷史資料資訊(當月)
+            </summary>
+            <param name="StartTime">開始時間</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricSag_Search(System.String,System.String,System.String)">
+            <summary>
+            查詢電表驟降最新一筆
+            </summary>
+            <param name="StartTime">時間資訊</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricSwell_SearchMonth(System.String,System.String,System.String)">
+            <summary>
+            查詢電表驟升歷史資料資訊(當月)
+            </summary>
+            <param name="StartTime">開始時間</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricSwell_Search(System.String,System.String,System.String)">
+            <summary>
+            查詢電表驟升最新一筆
+            </summary>
+            <param name="StartTime">時間資訊</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricAlarm_SearchMonth(System.String,System.String,System.String)">
+            <summary>
+            查詢電表告警歷史資料資訊(當月)
+            </summary>
+            <param name="StartTime">開始時間</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricAlarm_Search(System.String,System.String,System.String)">
+            <summary>
+            查詢電表告警最新一筆
+            </summary>
+            <param name="StartTime">時間資訊</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricInformation_Add(EwatchIntegrateSystem.Modules.ElectricInformation_Log,System.String,System.String)">
+            <summary>
+            新增電表歷史資訊
+            </summary>
+            <param name="setting"></param>
+            <param name="CardNumber"></param>
+            <param name="BordNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricWeb_AddUpdate(EwatchIntegrateSystem.Modules.ElectricInformation_Log,System.String,System.String)">
+            <summary>
+            新增或更新電表即時資訊(Web)
+            </summary>
+            <param name="setting"></param>
+            <param name="CardNumber"></param>
+            <param name="BordNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricSag_Add(EwatchIntegrateSystem.Modules.ElectricSag_Log,System.String,System.String)">
+            <summary>
+            新增電表驟降歷史資訊
+            </summary>
+            <param name="setting"></param>
+            <param name="CardNumber"></param>
+            <param name="BordNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricSwell_Add(EwatchIntegrateSystem.Modules.ElectricSwell_Log,System.String,System.String)">
+            <summary>
+            新增電表驟升歷史資訊
+            </summary>
+            <param name="setting"></param>
+            <param name="CardNumber"></param>
+            <param name="BordNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricAlarm_Add(EwatchIntegrateSystem.Modules.ElectricAlarm_Log,System.String,System.String)">
+            <summary>
+            新增電表驟升歷史資訊
+            </summary>
+            <param name="setting"></param>
+            <param name="CardNumber"></param>
+            <param name="BordNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricTotal_Add(EwatchIntegrateSystem.Modules.ElectricInformation_Log,System.String,System.String)">
+            <summary>
+            累積電量預存程序
+            </summary>
+            <param name="setting"></param>
+            <param name="CardNumber"></param>
+            <param name="BordNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Methods.WebMethod">
+            <summary>
+            即時資訊資料庫方法
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Methods.WebMethod.ErrorResponse">
+            <summary>
+            錯誤資訊
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.WebMethod.#ctor(System.String)">
+            <summary>
+            即時資訊資料庫方法初始化
+            </summary>
+            <param name="sqlDB"></param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.WebMethod.ElectricWeb_Search">
+            <summary>
+            查詢全部電表即時資訊
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.WebMethod.ElectricWeb_Search(System.String,System.String)">
+            <summary>
+            查詢特定卡版號電表即時資訊
+            </summary>
+            <param name="CardNumber"></param>
+            <param name="BordNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Modules.CaseSetting">
+            <summary>
+            案場資料表
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.CaseSetting.CardNumber">
+            <summary>
+            卡號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.CaseSetting.BordNumber">
+            <summary>
+            版號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.CaseSetting.CaseName">
+            <summary>
+            案場名稱
+            </summary>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Modules.DeviceSetting">
+            <summary>
+            設備資料表
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.DeviceSetting.CardNumber">
+            <summary>
+            卡號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.DeviceSetting.BordNumber">
+            <summary>
+            版號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.DeviceSetting.DeviceNumber">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.DeviceSetting.DeviceName">
+            <summary>
+            設備名稱
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.DeviceSetting.DeviceTypeEnum">
+            <summary>
+            設備類型
+            </summary>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Modules.DeviceTypeEnumSetting">
+            <summary>
+            設備類型資料表
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.DeviceTypeEnumSetting.DeviceTypeEnum">
+            <summary>
+            設備類型編號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.DeviceTypeEnumSetting.DeviceTypeName">
+            <summary>
+            設備名稱
+            </summary>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Modules.ElectricAlarm_Log">
+            <summary>
+            電表告警資訊
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricAlarm_Log.ttime">
+            <summary>
+            時間字串(yyyyMMddHHmmss)
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricAlarm_Log.ttimen">
+            <summary>
+            時間
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricAlarm_Log.DeviceNumber">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricAlarm_Log.AlarmItem">
+            <summary>
+            警報項目
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricAlarm_Log.AlarmData">
+            <summary>
+            警報發生或解除時之百分比(通訊數值除100，資料庫讀取不用)
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricAlarm_Log.AlarmTime">
+            <summary>
+            發生日期與時間(yy/MM/dd HH:mm:ss)
+            </summary>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Modules.ElectricInformation_Log">
+            <summary>
+            電表歷史資訊
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.ttime">
+            <summary>
+            時間字串(yyyyMMddHHmm)
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.ttimen">
+            <summary>
+            時間
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.DeviceNumber">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Loop">
+            <summary>
+            設備迴路
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Va">
+            <summary>
+            a相電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Vb">
+            <summary>
+            b相電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Vc">
+            <summary>
+            c相電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Vnavg">
+            <summary>
+            平均相電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Vab">
+            <summary>
+            a線電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Vbc">
+            <summary>
+            b線電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Vca">
+            <summary>
+            c線電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Vlavg">
+            <summary>
+            平均線電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Ia">
+            <summary>
+            a相電流
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Ib">
+            <summary>
+            b相電流
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Ic">
+            <summary>
+            c相電流
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Iavg">
+            <summary>
+            平均相電流
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Freq">
+            <summary>
+            頻率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Kwa">
+            <summary>
+            a有效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Kwb">
+            <summary>
+            b有效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Kwc">
+            <summary>
+            c有效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.Kwtot">
+            <summary>
+            總有效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.KVARa">
+            <summary>
+            a無效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.KVARb">
+            <summary>
+            b無效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.KVARc">
+            <summary>
+            c無效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.KVARtot">
+            <summary>
+            總無效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.KVAa">
+            <summary>
+            a視在功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.KVAb">
+            <summary>
+            b視在功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.KVAc">
+            <summary>
+            c視在功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.KVAtot">
+            <summary>
+            總視在功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.PFa">
+            <summary>
+            a功率因數
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.PFb">
+            <summary>
+            b功率因數
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.PFc">
+            <summary>
+            c功率因數
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.PFavg">
+            <summary>
+            平均功率因數
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.PhaseAngleVa">
+            <summary>
+            a相電壓相位角
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.PhaseAngleVb">
+            <summary>
+            b相電壓相位角
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.PhaseAngleVc">
+            <summary>
+            c相電壓相位角
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.PhaseAngleIa">
+            <summary>
+            a相電流相位角
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.PhaseAngleIb">
+            <summary>
+            b相電流相位角
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.PhaseAngleIc">
+            <summary>
+            c相電流相位角
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.KWH">
+            <summary>
+            累積功率
+            </summary>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Modules.ElectricSag_Log">
+            <summary>
+            電表驟降電壓資訊
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSag_Log.ttime">
+            <summary>
+            時間字串(yyyyMMddHHmmss)
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSag_Log.ttimen">
+            <summary>
+            時間
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSag_Log.DeviceNumber">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSag_Log.sagCycle">
+            <summary>
+            電壓驟降之持續cycle數
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSag_Log.sagData">
+            <summary>
+            電壓驟降發生時之百分比(通訊數值除100，資料庫讀取不用)
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSag_Log.sagPhase">
+            <summary>
+            相電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSag_Log.sagBegin">
+            <summary>
+            開始發生日期與時間(yy/MM/dd HH:mm:ss)
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSag_Log.sagEnd">
+            <summary>
+            結束發生日期與時間(yy/MM/dd HH:mm:ss)
+            </summary>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Modules.ElectricSwell_Log">
+            <summary>
+            電表驟升電壓資訊
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSwell_Log.ttime">
+            <summary>
+            時間字串(yyyyMMddHHmmss)
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSwell_Log.ttimen">
+            <summary>
+            時間
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSwell_Log.DeviceNumber">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSwell_Log.swellCycle">
+            <summary>
+            電壓驟升之持續cycle數
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSwell_Log.swellData">
+            <summary>
+            電壓驟升發生時之百分比(通訊數值除100，資料庫讀取不用)
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSwell_Log.swellPhase">
+            <summary>
+            相電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSwell_Log.swellBegin">
+            <summary>
+            開始發生日期與時間(yy/MM/dd HH:mm:ss)
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricSwell_Log.swellEnd">
+            <summary>
+            結束發生日期與時間(yy/MM/dd HH:mm:ss)
+            </summary>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Modules.ElectricTotal_Log">
+            <summary>
+            電表累積量資訊
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricTotal_Log.ttime">
+            <summary>
+            時間字串(yyyyMMddHHmm)
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricTotal_Log.ttimen">
+            <summary>
+            時間
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricTotal_Log.CardNumber">
+            <summary>
+            卡號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricTotal_Log.BordNumber">
+            <summary>
+            版號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricTotal_Log.DeviceNumber">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricTotal_Log.Start1">
+            <summary>
+            起始累積量1
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricTotal_Log.End1">
+            <summary>
+            結束累積量1
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricTotal_Log.Start2">
+            <summary>
+            起始累積量2
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricTotal_Log.End2">
+            <summary>
+            結束累積量2
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricTotal_Log.Total">
+            <summary>
+            當日總累積量
+            </summary>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Modules.ElectricWeb">
+            <summary>
+            網頁電表資訊
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.ttime">
+            <summary>
+            時間字串(yyyyMMddHHmm)
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.ttimen">
+            <summary>
+            時間
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.CardNumber">
+            <summary>
+            卡號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.BordNumber">
+            <summary>
+            版號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.DeviceNumber">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Va">
+            <summary>
+            a相電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Vb">
+            <summary>
+            b相電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Vc">
+            <summary>
+            c相電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Vnavg">
+            <summary>
+            平均相電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Vab">
+            <summary>
+            a線電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Vbc">
+            <summary>
+            b線電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Vca">
+            <summary>
+            c線電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Vlavg">
+            <summary>
+            平均線電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Ia">
+            <summary>
+            a相電流
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Ib">
+            <summary>
+            b相電流
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Ic">
+            <summary>
+            c相電流
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Iavg">
+            <summary>
+            平均相電流
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Freq">
+            <summary>
+            頻率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Kwa">
+            <summary>
+            a有效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Kwb">
+            <summary>
+            b有效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Kwc">
+            <summary>
+            c有效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.Kwtot">
+            <summary>
+            總有效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.KVARa">
+            <summary>
+            a無效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.KVARb">
+            <summary>
+            b無效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.KVARc">
+            <summary>
+            c無效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.KVARtot">
+            <summary>
+            總無效功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.KVAa">
+            <summary>
+            a視在功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.KVAb">
+            <summary>
+            b視在功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.KVAc">
+            <summary>
+            c視在功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.KVAtot">
+            <summary>
+            總視在功率
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.PFa">
+            <summary>
+            a功率因數
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.PFb">
+            <summary>
+            b功率因數
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.PFc">
+            <summary>
+            c功率因數
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.PFavg">
+            <summary>
+            平均功率因數
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.PhaseAngleVa">
+            <summary>
+            a相電壓相位角
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.PhaseAngleVb">
+            <summary>
+            b相電壓相位角
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.PhaseAngleVc">
+            <summary>
+            c相電壓相位角
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.PhaseAngleIa">
+            <summary>
+            a相電流相位角
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.PhaseAngleIb">
+            <summary>
+            b相電流相位角
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.PhaseAngleIc">
+            <summary>
+            c相電流相位角
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.KWH">
+            <summary>
+            累積功率
+            </summary>
+        </member>
+    </members>
+</doc>

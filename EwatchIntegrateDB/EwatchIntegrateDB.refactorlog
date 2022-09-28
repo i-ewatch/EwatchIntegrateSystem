@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="0dc242db-6ebd-4c82-ba4d-37c7841ad521" ChangeDateTime="05/24/2022 03:22:58">
+    <Property Name="ElementName" Value="[dbo].[CaseSetting].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CaseSetting]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CardNumber" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="67cce4ed-3ba9-426e-9624-0cdc7e5c99ae" ChangeDateTime="05/24/2022 03:24:18">
+    <Property Name="ElementName" Value="[dbo].[CaseSetting].[Bord]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[CaseSetting]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="BordNumber" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ed7e4881-fd22-45aa-a1bb-8476ae3b09ba" ChangeDateTime="05/24/2022 03:27:06">
+    <Property Name="ElementName" Value="[dbo].[DeviceTypeEnumSetting].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[DeviceTypeEnumSetting]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DeviceTypeEnum" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="63fc9006-bc26-4868-b906-3fdd2e00fec4" ChangeDateTime="05/24/2022 03:28:19">
+    <Property Name="ElementName" Value="[dbo].[ElectricWeb].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ElectricWeb]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ttime" />
+  </Operation>
+</Operations>

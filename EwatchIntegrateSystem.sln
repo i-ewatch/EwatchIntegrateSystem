@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EwatchIntegrateSystem", "EwatchIntegrateSystem\EwatchIntegrateSystem.csproj", "{A41ED947-6C02-409E-8191-90DB35FEB92D}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EwatchIntegrateDB", "EwatchIntegrateDB\EwatchIntegrateDB.sqlproj", "{6688C91C-8E13-461E-8CD3-555634BD0B6F}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EwatchIntegrateTotal", "EwatchIntegrateTotal\EwatchIntegrateTotal.sqlproj", "{7FD571A1-889D-4FD5-BD23-8AB6EB9C5591}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A41ED947-6C02-409E-8191-90DB35FEB92D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A41ED947-6C02-409E-8191-90DB35FEB92D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A41ED947-6C02-409E-8191-90DB35FEB92D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A41ED947-6C02-409E-8191-90DB35FEB92D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6688C91C-8E13-461E-8CD3-555634BD0B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6688C91C-8E13-461E-8CD3-555634BD0B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6688C91C-8E13-461E-8CD3-555634BD0B6F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6688C91C-8E13-461E-8CD3-555634BD0B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6688C91C-8E13-461E-8CD3-555634BD0B6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6688C91C-8E13-461E-8CD3-555634BD0B6F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7FD571A1-889D-4FD5-BD23-8AB6EB9C5591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD571A1-889D-4FD5-BD23-8AB6EB9C5591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD571A1-889D-4FD5-BD23-8AB6EB9C5591}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{7FD571A1-889D-4FD5-BD23-8AB6EB9C5591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD571A1-889D-4FD5-BD23-8AB6EB9C5591}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FD571A1-889D-4FD5-BD23-8AB6EB9C5591}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BCD4E8F-8505-4AE6-8CBB-AC8208E8394B}
+	EndGlobalSection
+EndGlobal
