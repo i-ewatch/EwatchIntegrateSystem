@@ -506,7 +506,7 @@ namespace EwatchIntegrateSystem.Methods
             {
                 DateTime nowstartTime = Convert.ToDateTime(StartTime.ToString("yyyy/MM/01 00:00:00"));
                 DateTime nowendTime = Convert.ToDateTime(nowstartTime.ToString("yyyy/MM") + $"/{DateTime.DaysInMonth(nowstartTime.Year, nowstartTime.Month).ToString().PadLeft(2, '0')}");
-                DateTime afterstartTime = StartTime.AddYears(-1);
+                DateTime afterstartTime = nowstartTime.AddYears(-1);
                 DateTime afterendTime = Convert.ToDateTime(afterstartTime.ToString("yyyy/MM") + $"/{DateTime.DaysInMonth(afterstartTime.Year, afterstartTime.Month).ToString().PadLeft(2, '0')}");
                 using (IDbConnection connection = new SqlConnection(SqlDB))
                 {
@@ -561,7 +561,7 @@ namespace EwatchIntegrateSystem.Methods
             {
                 DateTime nowstartTime = Convert.ToDateTime(StartTime.ToString("yyyy/01/01 00:00:00"));
                 DateTime nowendTime = Convert.ToDateTime(nowstartTime.ToString("yyyy/12/31  00:00:00"));
-                DateTime afterstartTime = StartTime.AddYears(-1);
+                DateTime afterstartTime = nowstartTime.AddYears(-1);
                 DateTime afterendTime = Convert.ToDateTime(afterstartTime.ToString("yyyy/12/31 00:00:00"));
                 using (IDbConnection connection = new SqlConnection(SqlDB))
                 {
