@@ -28,4 +28,11 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ttime" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="700c8ad1-8fca-4dd8-8374-b21560296856" ChangeDateTime="12/29/2022 05:33:26">
+    <Property Name="ElementName" Value="[dbo].[Co2Setting].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Co2Setting]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Year" />
+  </Operation>
 </Operations>

@@ -4,6 +4,153 @@
         <name>EwatchIntegrateSystem</name>
     </assembly>
     <members>
+        <member name="T:EwatchIntegrateSystem.Controllers.DeviceReportController">
+            <summary>
+            設備報表分析
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.DeviceReportController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            設備報表分析
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.DeviceReportController.Kind(System.Int32)">
+            <summary>
+            項目
+            </summary>
+            <param name="deviceTypeEnum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.DeviceReportController.Item(System.String)">
+            <summary>
+            項次
+            </summary>
+            <param name="Kind">種類</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.DeviceReportController.Search_Data(System.DateTime,System.DateTime,EwatchIntegrateSystem.Modules.DeviceSetting,System.String,System.Int32)">
+            <summary>
+            查詢設備曲線圖
+            </summary>
+            <param name="StartTime">開始時間</param>
+            <param name="EndTime">結束時間</param>
+            <param name="deviceSetting">設備資訊</param>
+            <param name="Kind">種類</param>
+            <param name="Item">項次</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.DeviceReportController.DownLoad_Data(System.DateTime,System.DateTime,EwatchIntegrateSystem.Modules.DeviceSetting,System.String,System.Int32)">
+            <summary>
+            下載設備報表
+            </summary>
+            <param name="StartTime">開始時間</param>
+            <param name="EndTime">結束時間</param>
+            <param name="deviceSetting">設備資訊</param>
+            <param name="Kind">種類</param>
+            <param name="Item">項次</param>
+            <returns></returns>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Controllers.ElectricController">
+            <summary>
+            電表資訊
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.ElectricController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            電表資訊
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.ElectricController.Device_Month_kWh(EwatchIntegrateSystem.Modules.Search_Electric)">
+            <summary>
+            月用電趨勢比較
+            </summary>
+            <param name="search_Electric">查詢電表資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.ElectricController.Device_Year_kWh(EwatchIntegrateSystem.Modules.Search_Electric)">
+            <summary>
+            年用電趨勢比較
+            </summary>
+            <param name="search_Electric">查詢電表資訊</param>
+            <returns></returns>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Controllers.ElectricController.kWh_Bar.ttime">
+            <summary>
+            時間
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Controllers.ElectricController.kWh_Bar.NowTotalkWh">
+            <summary>
+            今年本月累積量
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Controllers.ElectricController.kWh_Bar.AfterTotalkWh">
+            <summary>
+            去年本月累積量
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.ElectricController.Device_Total_Info(EwatchIntegrateSystem.Modules.Search_Electric)">
+            <summary>
+            用電累積量資訊
+            </summary>
+            <param name="search_Electric">查詢電表資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.ElectricController.Device_Sag_Swell_Info(EwatchIntegrateSystem.Modules.Search_Electric)">
+            <summary>
+            驟降驟升事件
+            </summary>
+            <param name="search_Electric">查詢電表資訊</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.ElectricController.Device_Alarm_Info(EwatchIntegrateSystem.Modules.Search_Electric)">
+            <summary>
+            超約告警事件
+            </summary>
+            <param name="search_Electric">查詢電表資訊</param>
+            <returns></returns>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Controllers.EventReportController">
+            <summary>
+            事件報表分析
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.EventReportController.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            事件報表分析
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.EventReportController.Kind(System.Int32)">
+            <summary>
+            項目
+            </summary>
+            <param name="deviceTypeEnum">設備類型</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.EventReportController.Search_Data(System.DateTime,System.DateTime,EwatchIntegrateSystem.Modules.DeviceSetting,System.String)">
+            <summary>
+            查詢設備事件
+            </summary>
+            <param name="StartTime">開始時間</param>
+            <param name="EndTime">結束時間</param>
+            <param name="deviceSetting">設備資訊</param>
+            <param name="Kind">種類</param>
+            <param name="Item">項次</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Controllers.EventReportController.DownLoad_Data(System.DateTime,System.DateTime,EwatchIntegrateSystem.Modules.DeviceSetting,System.String)">
+            <summary>
+            下載設備事件報表
+            </summary>
+            <param name="StartTime">開始時間</param>
+            <param name="EndTime">結束時間</param>
+            <param name="deviceSetting">設備資訊</param>
+            <param name="Kind">種類</param>
+            <returns></returns>
+        </member>
         <member name="T:EwatchIntegrateSystem.Controllers.InformationDataController">
             <summary>
             數值資訊
@@ -25,94 +172,6 @@
             <param name="Message">訊息字串</param>
             <param name="setting">取得物件</param>
         </member>
-        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetAllElectricWeb">
-            <summary>
-            取得全部電表即時資訊
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetAllElectricWeb(System.String,System.String)">
-            <summary>
-            取得特定卡版號全部電表即時資訊
-            </summary>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
-            <returns></returns>
-        </member>
-        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetElectricSagWeb(System.String,System.String,System.String)">
-            <summary>
-            取得最新驟降電壓資訊
-            </summary>
-            <param name="StartTime">當月時間 (yyyyMM)</param>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
-            <returns></returns>
-        </member>
-        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetElectricSwellWeb(System.String,System.String,System.String)">
-            <summary>
-            取得最新驟升電壓資訊
-            </summary>
-            <param name="StartTime">當月時間 (yyyyMM)</param>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
-            <returns></returns>
-        </member>
-        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetElectricAlarmWeb(System.String,System.String,System.String)">
-            <summary>
-            取得最新電表告警資訊
-            </summary>
-            <param name="StartTime">當月時間 (yyyyMM)</param>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
-            <returns></returns>
-        </member>
-        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetElectricLog(System.String,System.String,System.String)">
-            <summary>
-            當月電表歷史資訊
-            </summary>
-            <param name="StartTime">當月時間 (yyyyMM)</param>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
-            <returns></returns>
-        </member>
-        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetElectricSagLog(System.String,System.String,System.String)">
-            <summary>
-            當月驟降電壓歷史資訊
-            </summary>
-            <param name="StartTime">當月時間 (yyyyMM)</param>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
-            <returns></returns>
-        </member>
-        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetElectricSwellLog(System.String,System.String,System.String)">
-            <summary>
-            當月驟升電壓歷史資訊
-            </summary>
-            <param name="StartTime">當月時間 (yyyyMM)</param>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
-            <returns></returns>
-        </member>
-        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetElectricAlarmLog(System.String,System.String,System.String)">
-            <summary>
-            當月電表告警歷史資訊
-            </summary>
-            <param name="StartTime">當月時間 (yyyyMM)</param>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
-            <returns></returns>
-        </member>
-        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.GetELectricTotal(System.String,System.String,System.String,System.String,System.Int32)">
-            <summary>
-            查詢電表累積量資料(特定卡版號單顆電表)
-            </summary>
-            <param name="StartTime">開始時間(yyyyMMdd)</param>
-            <param name="EndTime">結束時間(yyyyMMdd)</param>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
-            <param name="DeviceNumber">設備編號</param>
-            <returns></returns>
-        </member>
         <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.InsertElectricInformationLog(EwatchIntegrateSystem.Modules.ElectricInformation_Log,System.String,System.String)">
             <summary>
             新增電表資訊、更新電表即時資訊、刷新累積電量資訊
@@ -122,20 +181,11 @@
             <param name="BordNumber">版號</param>
             <returns></returns>
         </member>
-        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.InserElectricSagLog(EwatchIntegrateSystem.Modules.ElectricSag_Log,System.String,System.String)">
+        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.InserElectric_Sag_SwellLog(EwatchIntegrateSystem.Modules.Electric_Sag_Swell_Log,System.String,System.String)">
             <summary>
-            新增電表驟降電壓資訊
+            新增電表驟降驟升電壓資訊
             </summary>
-            <param name="electricSag_Log">電表驟降電壓資訊</param>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
-            <returns></returns>
-        </member>
-        <member name="M:EwatchIntegrateSystem.Controllers.InformationDataController.InserElectricSwellLog(EwatchIntegrateSystem.Modules.ElectricSwell_Log,System.String,System.String)">
-            <summary>
-            新增電表驟升電壓資訊
-            </summary>
-            <param name="electricSwell_Log">電表驟升電壓資訊</param>
+            <param name="electric_Sag_Swell_Log">電表驟降電壓資訊</param>
             <param name="CardNumber">卡號</param>
             <param name="BordNumber">版號</param>
             <returns></returns>
@@ -293,6 +343,41 @@
             <param name="deviceTypeEnumSetting">設備類型資訊</param>
             <returns></returns>
         </member>
+        <member name="T:EwatchIntegrateSystem.Enums.DeviceTypeEnum">
+            <summary>
+            設備類型
+            </summary>
+        </member>
+        <member name="F:EwatchIntegrateSystem.Enums.DeviceTypeEnum.HC6600">
+            <summary>
+            HC6600電表
+            </summary>
+        </member>
+        <member name="F:EwatchIntegrateSystem.Enums.DeviceTypeEnum.PA310">
+            <summary>
+            PA310電表類型
+            </summary>
+        </member>
+        <member name="F:EwatchIntegrateSystem.Enums.DeviceTypeEnum.PA60">
+            <summary>
+            PA60電表
+            </summary>
+        </member>
+        <member name="F:EwatchIntegrateSystem.Enums.DeviceTypeEnum.TOYOPM96">
+            <summary>
+            TOYOPM96電表
+            </summary>
+        </member>
+        <member name="F:EwatchIntegrateSystem.Enums.DeviceTypeEnum.PM5570">
+            <summary>
+            PM5570電表
+            </summary>
+        </member>
+        <member name="F:EwatchIntegrateSystem.Enums.DeviceTypeEnum.PA3000">
+            <summary>
+            PA3000電表
+            </summary>
+        </member>
         <member name="T:EwatchIntegrateSystem.Enums.ResponseTypeEnum">
             <summary>
             回應類型
@@ -433,6 +518,28 @@
             刪除案場
             </summary>
             <param name="setting"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Methods.DataTableToList">
+            <summary>
+            DataTable To List
+            </summary>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DataTableToList.ToList``1(System.Data.DataTable)">
+            <summary>
+            To List Function
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.DataTableToList.CreateItemFromRow``1(System.Data.DataRow,System.Collections.Generic.IList{System.Reflection.PropertyInfo})">
+            <summary>
+            Create Item From Row
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="row"></param>
+            <param name="properties"></param>
             <returns></returns>
         </member>
         <member name="T:EwatchIntegrateSystem.Methods.DeviceMethod">
@@ -582,7 +689,7 @@
         </member>
         <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Create_ElectricSagTable(System.DateTime,System.String,System.String)">
             <summary>
-            建立電表驟降事件表
+            建立電表驟降事件表(不使用)
             </summary>
             <param name="dateTime"></param>
             <param name="CardNumber"></param>
@@ -590,7 +697,15 @@
         </member>
         <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Create_ElectricSwellTable(System.DateTime,System.String,System.String)">
             <summary>
-            建立電表驟升事件表
+            建立電表驟升事件表(不使用)
+            </summary>
+            <param name="dateTime"></param>
+            <param name="CardNumber"></param>
+            <param name="BordNumber"></param>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Create_Electric_Sag_SwellTable(System.DateTime,System.String,System.String)">
+            <summary>
+            建立電表驟降驟升事件表
             </summary>
             <param name="dateTime"></param>
             <param name="CardNumber"></param>
@@ -612,78 +727,97 @@
             <param name="BordNumber">版號</param>
             <returns></returns>
         </member>
-        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricInformation_SearchMonth(System.String,System.String,System.String)">
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Search_Month_kWh(System.DateTime,System.String,System.String,System.String,System.Int32)">
             <summary>
-            查詢電表歷史資料資訊(當月)
+            月用電趨勢
             </summary>
-            <param name="StartTime">開始時間</param>
+            <param name="StartTime">查詢時間 yyyy/MM</param>
             <param name="CardNumber">卡號</param>
             <param name="BordNumber">版號</param>
+            <param name="DeviceName">設備名稱</param>
+            <param name="DeviceNumber">設備編號</param>
             <returns></returns>
         </member>
-        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricTotal_Search(System.String,System.String,System.String,System.String,System.Int32)">
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Search_Year_kWh(System.DateTime,System.String,System.String,System.String,System.Int32)">
             <summary>
-            查詢電表累積量資料
+            年用電趨勢
             </summary>
-            <param name="StartTime">開始時間</param>
-            <param name="EndTime">結束時間</param>
+            <param name="StartTime">查詢時間 yyyy/MM</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <param name="DeviceName">設備名稱</param>
+            <param name="DeviceNumber">設備編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Search_Total_Info(System.DateTime,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            用電累積量資訊
+            </summary>
+            <param name="StartTime">查詢時間 yyyy/MM</param>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <param name="DeviceName">設備名稱</param>
+            <param name="DeviceNumber">設備編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Search_Sag_Swell_Info(System.String,System.String,System.Int32)">
+            <summary>
+            驟降驟升事件
+            </summary>
             <param name="CardNumber">卡號</param>
             <param name="BordNumber">版號</param>
             <param name="DeviceNumber">設備編號</param>
             <returns></returns>
         </member>
-        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricSag_SearchMonth(System.String,System.String,System.String)">
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Search_Alarm_Info(System.String,System.String,System.Int32)">
             <summary>
-            查詢電表驟降歷史資料資訊(當月)
+            超約告警事件
+            </summary>
+            <param name="CardNumber">卡號</param>
+            <param name="BordNumber">版號</param>
+            <param name="DeviceNumber">設備編號</param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Search_Chart(System.DateTime,System.DateTime,EwatchIntegrateSystem.Modules.DeviceSetting,System.String,System.Int32)">
+            <summary>
+            報表曲線圖查詢
             </summary>
             <param name="StartTime">開始時間</param>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
+            <param name="EndTime">結束時間</param>
+            <param name="deviceSetting">設備資訊</param>
+            <param name="Kind">種類</param>
+            <param name="Item">項次</param>
             <returns></returns>
         </member>
-        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricSag_Search(System.String,System.String,System.String)">
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.DownLoad_Device_Chart_Report(System.DateTime,System.DateTime,EwatchIntegrateSystem.Modules.DeviceSetting,System.String,System.Int32)">
             <summary>
-            查詢電表驟降最新一筆
-            </summary>
-            <param name="StartTime">時間資訊</param>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
-            <returns></returns>
-        </member>
-        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricSwell_SearchMonth(System.String,System.String,System.String)">
-            <summary>
-            查詢電表驟升歷史資料資訊(當月)
+            下載報表資訊
             </summary>
             <param name="StartTime">開始時間</param>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
+            <param name="EndTime">結束時間</param>
+            <param name="deviceSetting">設備資訊</param>
+            <param name="Kind">種類</param>
+            <param name="Item">項次</param>
             <returns></returns>
         </member>
-        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricSwell_Search(System.String,System.String,System.String)">
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Search_Event(System.DateTime,System.DateTime,EwatchIntegrateSystem.Modules.DeviceSetting,System.String)">
             <summary>
-            查詢電表驟升最新一筆
-            </summary>
-            <param name="StartTime">時間資訊</param>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
-            <returns></returns>
-        </member>
-        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricAlarm_SearchMonth(System.String,System.String,System.String)">
-            <summary>
-            查詢電表告警歷史資料資訊(當月)
+            事件報表查詢
             </summary>
             <param name="StartTime">開始時間</param>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
+            <param name="EndTime">結束時間</param>
+            <param name="deviceSetting">設備資訊</param>
+            <param name="Kind">種類</param>
             <returns></returns>
         </member>
-        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricAlarm_Search(System.String,System.String,System.String)">
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.DownLoad_Device_Event_Report(System.DateTime,System.DateTime,EwatchIntegrateSystem.Modules.DeviceSetting,System.String)">
             <summary>
-            查詢電表告警最新一筆
+            下載事件報表
             </summary>
-            <param name="StartTime">時間資訊</param>
-            <param name="CardNumber">卡號</param>
-            <param name="BordNumber">版號</param>
+            <param name="StartTime">開始時間</param>
+            <param name="EndTime">結束時間</param>
+            <param name="deviceSetting">設備資訊</param>
+            <param name="Kind">種類</param>
             <returns></returns>
         </member>
         <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricInformation_Add(EwatchIntegrateSystem.Modules.ElectricInformation_Log,System.String,System.String)">
@@ -704,27 +838,18 @@
             <param name="BordNumber"></param>
             <returns></returns>
         </member>
-        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricSag_Add(EwatchIntegrateSystem.Modules.ElectricSag_Log,System.String,System.String)">
-            <summary>
-            新增電表驟降歷史資訊
-            </summary>
-            <param name="setting"></param>
-            <param name="CardNumber"></param>
-            <param name="BordNumber"></param>
-            <returns></returns>
-        </member>
-        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricSwell_Add(EwatchIntegrateSystem.Modules.ElectricSwell_Log,System.String,System.String)">
-            <summary>
-            新增電表驟升歷史資訊
-            </summary>
-            <param name="setting"></param>
-            <param name="CardNumber"></param>
-            <param name="BordNumber"></param>
-            <returns></returns>
-        </member>
         <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.ElectricAlarm_Add(EwatchIntegrateSystem.Modules.ElectricAlarm_Log,System.String,System.String)">
             <summary>
-            新增電表驟升歷史資訊
+            新增電表警告歷史資訊
+            </summary>
+            <param name="setting"></param>
+            <param name="CardNumber"></param>
+            <param name="BordNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EwatchIntegrateSystem.Methods.ElectricLogMethod.Electric_Sag_Swell_Add(EwatchIntegrateSystem.Modules.Electric_Sag_Swell_Log,System.String,System.String)">
+            <summary>
+            新增電表驟降驟升歷史資訊
             </summary>
             <param name="setting"></param>
             <param name="CardNumber"></param>
@@ -788,6 +913,21 @@
         <member name="P:EwatchIntegrateSystem.Modules.CaseSetting.CaseName">
             <summary>
             案場名稱
+            </summary>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Modules.Co2Setting">
+            <summary>
+            每度電碳排放
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Co2Setting.Year">
+            <summary>
+            年份
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Co2Setting.Value">
+            <summary>
+            數值
             </summary>
         </member>
         <member name="T:EwatchIntegrateSystem.Modules.DeviceSetting">
@@ -1068,6 +1208,971 @@
         <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.PhaseAngleIc">
             <summary>
             c相電流相位角
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.KwPercent">
+            <summary>
+            用電百分比
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD">
+            <summary>
+            RV諧波
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD1">
+            <summary>
+            RV諧波_1
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD2">
+            <summary>
+            RV諧波_2
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD3">
+            <summary>
+            RV諧波_3
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD4">
+            <summary>
+            RV諧波_4
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD5">
+            <summary>
+            RV諧波_5
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD6">
+            <summary>
+            RV諧波_6
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD7">
+            <summary>
+            RV諧波_7
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD8">
+            <summary>
+            RV諧波_8
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD9">
+            <summary>
+            RV諧波_9
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD10">
+            <summary>
+            RV諧波_10
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD11">
+            <summary>
+            RV諧波_11
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD12">
+            <summary>
+            RV諧波_12
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD13">
+            <summary>
+            RV諧波_13
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD14">
+            <summary>
+            RV諧波_14
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD15">
+            <summary>
+            RV諧波_15
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD16">
+            <summary>
+            RV諧波_16
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD17">
+            <summary>
+            RV諧波_17
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD18">
+            <summary>
+            RV諧波_18
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD19">
+            <summary>
+            RV諧波_19
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD20">
+            <summary>
+            RV諧波_20
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD21">
+            <summary>
+            RV諧波_21
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD22">
+            <summary>
+            RV諧波_22
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD23">
+            <summary>
+            RV諧波_23
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD24">
+            <summary>
+            RV諧波_24
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD25">
+            <summary>
+            RV諧波_25
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD26">
+            <summary>
+            RV諧波_26
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD27">
+            <summary>
+            RV諧波_27
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD28">
+            <summary>
+            RV諧波_28
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD29">
+            <summary>
+            RV諧波_29
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD30">
+            <summary>
+            RV諧波_30
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RV_HD31">
+            <summary>
+            RV諧波_31
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD">
+            <summary>
+            SV諧波
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD1">
+            <summary>
+            SV諧波_1
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD2">
+            <summary>
+            SV諧波_2
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD3">
+            <summary>
+            SV諧波_3
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD4">
+            <summary>
+            SV諧波_4
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD5">
+            <summary>
+            SV諧波_5
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD6">
+            <summary>
+            SV諧波_6
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD7">
+            <summary>
+            SV諧波_7
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD8">
+            <summary>
+            SV諧波_8
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD9">
+            <summary>
+            SV諧波_9
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD10">
+            <summary>
+            SV諧波_10
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD11">
+            <summary>
+            SV諧波_11
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD12">
+            <summary>
+            SV諧波_12
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD13">
+            <summary>
+            SV諧波_13
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD14">
+            <summary>
+            SV諧波_14
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD15">
+            <summary>
+            SV諧波_15
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD16">
+            <summary>
+            SV諧波_16
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD17">
+            <summary>
+            SV諧波_17
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD18">
+            <summary>
+            SV諧波_18
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD19">
+            <summary>
+            SV諧波_19
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD20">
+            <summary>
+            SV諧波_20
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD21">
+            <summary>
+            SV諧波_21
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD22">
+            <summary>
+            SV諧波_22
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD23">
+            <summary>
+            SV諧波_23
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD24">
+            <summary>
+            SV諧波_24
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD25">
+            <summary>
+            SV諧波_25
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD26">
+            <summary>
+            SV諧波_26
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD27">
+            <summary>
+            SV諧波_27
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD28">
+            <summary>
+            SV諧波_28
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD29">
+            <summary>
+            SV諧波_29
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD30">
+            <summary>
+            SV諧波_30
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SV_HD31">
+            <summary>
+            SV諧波_31
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD">
+            <summary>
+            TV諧波
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD1">
+            <summary>
+            TV諧波_1
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD2">
+            <summary>
+            TV諧波_2
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD3">
+            <summary>
+            TV諧波_3
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD4">
+            <summary>
+            TV諧波_4
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD5">
+            <summary>
+            TV諧波_5
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD6">
+            <summary>
+            TV諧波_6
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD7">
+            <summary>
+            TV諧波_7
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD8">
+            <summary>
+            TV諧波_8
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD9">
+            <summary>
+            TV諧波_9
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD10">
+            <summary>
+            TV諧波_10
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD11">
+            <summary>
+            TV諧波_11
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD12">
+            <summary>
+            TV諧波_12
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD13">
+            <summary>
+            TV諧波_13
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD14">
+            <summary>
+            TV諧波_14
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD15">
+            <summary>
+            TV諧波_15
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD16">
+            <summary>
+            TV諧波_16
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD17">
+            <summary>
+            TV諧波_17
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD18">
+            <summary>
+            TV諧波_18
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD19">
+            <summary>
+            TV諧波_19
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD20">
+            <summary>
+            TV諧波_20
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD21">
+            <summary>
+            TV諧波_21
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD22">
+            <summary>
+            TV諧波_22
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD23">
+            <summary>
+            TV諧波_23
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD24">
+            <summary>
+            TV諧波_24
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD25">
+            <summary>
+            TV諧波_25
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD26">
+            <summary>
+            TV諧波_26
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD27">
+            <summary>
+            TV諧波_27
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD28">
+            <summary>
+            TV諧波_28
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD29">
+            <summary>
+            TV諧波_29
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD30">
+            <summary>
+            TV諧波_30
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TV_HD31">
+            <summary>
+            TV諧波_31
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD">
+            <summary>
+            RI諧波
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD1">
+            <summary>
+            RI諧波_1
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD2">
+            <summary>
+            RI諧波_2
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD3">
+            <summary>
+            RI諧波_3
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD4">
+            <summary>
+            RI諧波_4
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD5">
+            <summary>
+            RI諧波_5
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD6">
+            <summary>
+            RI諧波_6
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD7">
+            <summary>
+            RI諧波_7
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD8">
+            <summary>
+            RI諧波_8
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD9">
+            <summary>
+            RI諧波_9
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD10">
+            <summary>
+            RI諧波_10
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD11">
+            <summary>
+            RI諧波_11
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD12">
+            <summary>
+            RI諧波_12
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD13">
+            <summary>
+            RI諧波_13
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD14">
+            <summary>
+            RI諧波_14
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD15">
+            <summary>
+            RI諧波_15
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD16">
+            <summary>
+            RI諧波_16
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD17">
+            <summary>
+            RI諧波_17
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD18">
+            <summary>
+            RI諧波_18
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD19">
+            <summary>
+            RI諧波_19
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD20">
+            <summary>
+            RI諧波_20
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD21">
+            <summary>
+            RI諧波_21
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD22">
+            <summary>
+            RI諧波_22
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD23">
+            <summary>
+            RI諧波_23
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD24">
+            <summary>
+            RI諧波_24
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD25">
+            <summary>
+            RI諧波_25
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD26">
+            <summary>
+            RI諧波_26
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD27">
+            <summary>
+            RI諧波_27
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD28">
+            <summary>
+            RI諧波_28
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD29">
+            <summary>
+            RI諧波_29
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD30">
+            <summary>
+            RI諧波_30
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.RI_HD31">
+            <summary>
+            RI諧波_31
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD">
+            <summary>
+            SI諧波
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD1">
+            <summary>
+            SI諧波_1
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD2">
+            <summary>
+            SI諧波_2
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD3">
+            <summary>
+            SI諧波_3
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD4">
+            <summary>
+            SI諧波_4
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD5">
+            <summary>
+            SI諧波_5
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD6">
+            <summary>
+            SI諧波_6
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD7">
+            <summary>
+            SI諧波_7
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD8">
+            <summary>
+            SI諧波_8
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD9">
+            <summary>
+            SI諧波_9
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD10">
+            <summary>
+            SI諧波_10
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD11">
+            <summary>
+            SI諧波_11
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD12">
+            <summary>
+            SI諧波_12
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD13">
+            <summary>
+            SI諧波_13
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD14">
+            <summary>
+            SI諧波_14
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD15">
+            <summary>
+            SI諧波_15
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD16">
+            <summary>
+            SI諧波_16
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD17">
+            <summary>
+            SI諧波_17
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD18">
+            <summary>
+            SI諧波_18
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD19">
+            <summary>
+            SI諧波_19
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD20">
+            <summary>
+            SI諧波_20
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD21">
+            <summary>
+            SI諧波_21
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD22">
+            <summary>
+            SI諧波_22
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD23">
+            <summary>
+            SI諧波_23
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD24">
+            <summary>
+            SI諧波_24
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD25">
+            <summary>
+            SI諧波_25
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD26">
+            <summary>
+            SI諧波_26
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD27">
+            <summary>
+            SI諧波_27
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD28">
+            <summary>
+            SI諧波_28
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD29">
+            <summary>
+            SI諧波_29
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD30">
+            <summary>
+            SI諧波_30
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.SI_HD31">
+            <summary>
+            SI諧波_31
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD">
+            <summary>
+            TI諧波
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD1">
+            <summary>
+            TI諧波_1
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD2">
+            <summary>
+            TI諧波_2
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD3">
+            <summary>
+            TI諧波_3
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD4">
+            <summary>
+            TI諧波_4
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD5">
+            <summary>
+            TI諧波_5
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD6">
+            <summary>
+            TI諧波_6
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD7">
+            <summary>
+            TI諧波_7
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD8">
+            <summary>
+            TI諧波_8
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD9">
+            <summary>
+            TI諧波_9
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD10">
+            <summary>
+            TI諧波_10
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD11">
+            <summary>
+            TI諧波_11
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD12">
+            <summary>
+            TI諧波_12
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD13">
+            <summary>
+            TI諧波_13
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD14">
+            <summary>
+            TI諧波_14
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD15">
+            <summary>
+            TI諧波_15
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD16">
+            <summary>
+            TI諧波_16
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD17">
+            <summary>
+            TI諧波_17
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD18">
+            <summary>
+            TI諧波_18
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD19">
+            <summary>
+            TI諧波_19
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD20">
+            <summary>
+            TI諧波_20
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD21">
+            <summary>
+            TI諧波_21
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD22">
+            <summary>
+            TI諧波_22
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD23">
+            <summary>
+            TI諧波_23
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD24">
+            <summary>
+            TI諧波_24
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD25">
+            <summary>
+            TI諧波_25
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD26">
+            <summary>
+            TI諧波_26
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD27">
+            <summary>
+            TI諧波_27
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD28">
+            <summary>
+            TI諧波_28
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD29">
+            <summary>
+            TI諧波_29
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD30">
+            <summary>
+            TI諧波_30
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.TI_HD31">
+            <summary>
+            TI諧波_31
             </summary>
         </member>
         <member name="P:EwatchIntegrateSystem.Modules.ElectricInformation_Log.KWH">
@@ -1428,6 +2533,101 @@
         <member name="P:EwatchIntegrateSystem.Modules.ElectricWeb.KWH">
             <summary>
             累積功率
+            </summary>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Modules.Electric_Sag_Swell_Log">
+            <summary>
+            驟降驟升資訊
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Electric_Sag_Swell_Log.ttime">
+            <summary>
+            時間字串(yyyyMMddHHmmss)
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Electric_Sag_Swell_Log.ttimen">
+            <summary>
+            時間
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Electric_Sag_Swell_Log.DeviceNumber">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Electric_Sag_Swell_Log.Sag_Swell_Type">
+            <summary>
+            驟升驟降字串
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Electric_Sag_Swell_Log.Cycle">
+            <summary>
+            電壓驟升之持續cycle數
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Electric_Sag_Swell_Log.Data">
+            <summary>
+            電壓驟升發生時之百分比(通訊數值除100，資料庫讀取不用)
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Electric_Sag_Swell_Log.Phase">
+            <summary>
+            相電壓
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Electric_Sag_Swell_Log.Sag_Swell_Begin">
+            <summary>
+            開始發生日期與時間(yy/MM/dd HH:mm:ss)
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Electric_Sag_Swell_Log.Sag_Swell_End">
+            <summary>
+            結束發生日期與時間(yy/MM/dd HH:mm:ss)
+            </summary>
+        </member>
+        <member name="T:EwatchIntegrateSystem.Modules.Search_Electric">
+            <summary>
+            電表查詢物件
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Search_Electric.StartTime">
+            <summary>
+            開始時間
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Search_Electric.EndTime">
+            <summary>
+            結束時間
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Search_Electric.CardNumber">
+            <summary>
+            卡號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Search_Electric.BordNumber">
+            <summary>
+            版號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Search_Electric.DeviceName">
+            <summary>
+            設備名稱
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Search_Electric.DeviceNumber">
+            <summary>
+            設備編號
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Search_Electric.Search_Type">
+            <summary>
+            報表查詢類型
+            </summary>
+        </member>
+        <member name="P:EwatchIntegrateSystem.Modules.Search_Electric.Item_Type">
+            <summary>
+            查詢項目
             </summary>
         </member>
     </members>

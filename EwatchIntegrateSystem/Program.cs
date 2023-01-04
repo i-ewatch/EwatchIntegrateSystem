@@ -15,17 +15,17 @@ builder.Services.AddSwaggerGen(options =>
 });
 builder.Services.AddSignalR();//加入SignalR功能
 builder.Services.AddCors();
-builder.WebHost.ConfigureKestrel(serveroption =>
-{
-    serveroption.ListenAnyIP(200);
-});
+//builder.WebHost.ConfigureKestrel(serveroption =>
+//{
+//    serveroption.ListenAnyIP(200);
+//});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseSwagger();
+app.UseSwaggerUI();
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
 }
 app.UseCors(builder =>
 {
